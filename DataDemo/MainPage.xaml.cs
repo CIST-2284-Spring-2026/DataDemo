@@ -2,23 +2,14 @@
 {
     public partial class MainPage : ContentPage
     {
-        int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void OnCounterClicked(object? sender, EventArgs e)
-        {
-            count++;
-
-            if (count == 1)
-                CounterBtn.Text = $"Clicked {count} time";
-            else
-                CounterBtn.Text = $"Clicked {count} times";
-
-            SemanticScreenReader.Announce(CounterBtn.Text);
+            var db = new DatabaseService();
+            var repo = new SchoolRepository(db);
+            pkMajor.ItemsSource = repo.GetMajors();
+            pkCourse.ItemsSource = repo.GetCourses();
+            pkCampus.ItemsSource = repo.GetCampuses();
         }
     }
 }
