@@ -4,16 +4,14 @@
              x:Class="DataDemo.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Label Text="School Database Demo" FontSize="24" />
-            <Label Text="Major" />
-            <Picker x:Name="pkMajor" />
-            <Label Text="Course" />
-            <Picker x:Name="pkCourse" />
-            <Label Text="Campus" />
-            <Picker x:Name="pkCampus" />
+        <VerticalStackLayout Padding="30" Spacing="20">
+            <Label
+            Text="Data Demo"
+            FontSize="28"
+            FontAttributes="Bold" />
+            <Label
+            Text="Use the Campuses tab to manage campus records."
+            FontSize="18" />
         </VerticalStackLayout>
     </ScrollView>
 

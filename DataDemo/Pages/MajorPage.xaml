@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DataDemo.Pages.MajorPage"
+             Title="MajorPage">
+    <VerticalStackLayout Padding="20" Spacing="12">
+        <Label
+            Text="Major Management"
+            FontSize="24"
+            FontAttributes="Bold" />
+        <Label Text="Major Name" />
+        <Entry
+            x:Name="txtMajorTitle"
+            Placeholder="Enter major title" />
+        <HorizontalStackLayout Spacing="10">
+            <Button
+                Text="Add New"
+                Clicked="OnAddClicked" />
+            <Button
+                Text="Update Selected"
+                Clicked="OnUpdateClicked" />
+            <Button
+                Text="Delete Selected"
+                Clicked="OnDeleteClicked" />
+            <Button
+                Text="Clear"
+                Clicked="OnClearClicked" />
+        </HorizontalStackLayout>
+        <Label Text="Majors" />
+        <CollectionView
+            x:Name="cvMajors"
+            SelectionMode="Single"
+            SelectionChanged="OnMajorSelectionChanged">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Padding="10" Margin="0,4">
+                        <VerticalStackLayout>
+                            <Label Text="{Binding Title}" FontSize="18" />
+                            <Label Text="{Binding Id}" FontSize="12" />
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Label
+            x:Name="lblStatus"
+            Text="Ready."
+            FontSize="14" />
+    </VerticalStackLayout>
+</ContentPage>

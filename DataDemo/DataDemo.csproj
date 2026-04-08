@@ -71,4 +71,25 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.5" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Compile Update="Pages\MajorPage.xaml.cs">
+	    <DependentUpon>MajorPage.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\CoursePage.xaml.cs">
+	    <DependentUpon>CoursePage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\MajorPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CoursePage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\CampusPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
 </Project>
